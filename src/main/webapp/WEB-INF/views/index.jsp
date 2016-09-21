@@ -119,7 +119,7 @@ body {
               <input type="text" class="form-control" id="subject" name="subject" placeholder="subject" required>
             </div>
             <div class="form-group">
-              <textarea class="form-control hidden" id="summernote" name="content" placeholder="content" maxlength="140" rows="7"></textarea>
+              <textarea class="form-control" id="summernote" name="content" placeholder="content" maxlength="140" rows="7"></textarea>
             </div>
             <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
           </form>
@@ -169,6 +169,6 @@ body {
           }
         });
       }
-    </script>
+  </script>
 </body>
 </html>

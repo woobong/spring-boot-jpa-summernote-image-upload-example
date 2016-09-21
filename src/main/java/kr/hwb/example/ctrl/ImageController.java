@@ -42,16 +42,16 @@ public class ImageController {
             UploadFile uploadedFile = imageService.load(fileId);
             HttpHeaders headers = new HttpHeaders();
             
-            Resource resource = imageService.loadAsResource(uploadedFile.getSaveFileName());
-            
+            String fileName = uploadedFile.getFileName();
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+
             if (MediaUtils.containsImageMediaType(uploadedFile.getContentType())) {
                 headers.setContentType(MediaType.valueOf(uploadedFile.getContentType()));
             } else {
-                String fileName = uploadedFile.getFileName();
                 headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-                headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
             }
-            
+
+            Resource resource = imageService.loadAsResource(uploadedFile.getSaveFileName());
             return ResponseEntity.ok().headers(headers).body(resource);
             
         } catch (Exception e) {
