@@ -100,7 +100,7 @@ body {
           <thead>
             <tr>
               <td>No.</td>
-              <td>Title</td>
+              <td>Subject</td>
               <td>RegDate</td>
             </tr>
           </thead>
@@ -108,7 +108,7 @@ body {
             <c:forEach items="${articleList}" var="i">
               <tr>
                 <td>${i.id}</td>
-                <td><a href="/article/${i.id}">${i.title}</a></td>
+                <td><a href="/article/${i.id}">${i.subject}</a></td>
                 <td>${i.regDate}</td>
               </tr>
             </c:forEach>

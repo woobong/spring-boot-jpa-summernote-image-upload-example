@@ -43,5 +43,4 @@ public class ArticleController {
         
         return "redirect:/article/" + articleRepository.save(article).getId();
     }
-    
 }
