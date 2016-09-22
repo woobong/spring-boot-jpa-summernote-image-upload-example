@@ -85,7 +85,7 @@ public class ImageService {
             saveFile.setSaveFileName(saveFileName);
             saveFile.setFileName(file.getOriginalFilename());
             saveFile.setContentType(file.getContentType());
-            saveFile.setFilePath(rootLocation.toString() + File.separator + saveFileName);
+            saveFile.setFilePath(rootLocation.toString().replace(File.separatorChar, '/') + File.separator + saveFileName);
             saveFile.setSize(resource.contentLength());
             saveFile.setRegDate(new Date());
             saveFile = fileRepository.save(saveFile);

@@ -28,6 +28,12 @@ public class UploadFileUtils {
      */
     public static String fileSave(String uploadPath, MultipartFile file) throws IllegalStateException, IOException {
         
+        File uploadPathDir = new File(uploadPath);
+        
+        if ( !uploadPathDir.exists() ){
+            uploadPathDir.mkdirs();
+        }
+        
         // 파일 중복명 처리
         String genId = UUID.randomUUID().toString();
         genId = genId.replace("-", "");
