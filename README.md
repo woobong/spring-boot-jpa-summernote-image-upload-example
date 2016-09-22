@@ -11,3 +11,10 @@ command 창에서 java -jar Summernote_image_upload-0.0.1-SNAPSHOT.war
 
 STS -> Import -> Maven -> Existing Mavan Projects에서 해당 프로젝트의 pom.xml 을 찾아 Import 하신 후
 Boot Dashboard를 통해 실행해보실 수 있습니다.
+
+기본 이미지 업로드 디렉토리( App.java 에서 변경 가능 )
+d:/image/
+
+H2 DB 데이터 확인
+http://localhost:8080/console
+url : jdbc:h2:mem:testdb
